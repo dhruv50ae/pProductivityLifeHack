@@ -24,6 +24,8 @@ def startTimer():
 def countDown(count):
     countMin = floor(count/60)
     countSec = count % 60
+    if countSec < 10:
+        countSec = f"0{countSec}"
 
     canvas.itemconfig(timerText, text=f"{countMin}:{countSec}")
     if count > 0:
